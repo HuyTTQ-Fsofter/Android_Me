@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--Copyright (C) 2017 The Android Open Source Project
+<?xml version="1.0" encoding="utf-8"?><!--Copyright (C) 2017 The Android Open Source Project
  Licensed under the Apache License, Version 2.0 (the "License");
  you may not use this file except in compliance with the License.
  You may obtain a copy of the License at
@@ -16,8 +15,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <GridView
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <GridView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/images_grid_view"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -29,8 +27,7 @@
         android:numColumns="3"
         android:padding="16dp"
         android:stretchMode="columnWidth"
-        android:verticalSpacing="8dp">
-    </GridView>
+        android:verticalSpacing="8dp"></GridView>
 
     <!-- The "Next" button -->
     <Button

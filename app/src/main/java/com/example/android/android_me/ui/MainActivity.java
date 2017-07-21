@@ -20,6 +20,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -30,12 +31,12 @@ import com.example.android.android_me.data.AndroidImageAssets;
 // This activity is responsible for displaying the master list of all images
 // Implement the MasterListFragment callback, OnImageClickListener
 public class MainActivity extends AppCompatActivity implements MasterListFragment.OnImageClickListener {
-
+    private static final String TAG = "MainActivity";
     // Variables to store the values for the list index of the selected images
     // The default value will be index = 0
-    private int headIndex;
-    private int bodyIndex;
-    private int legIndex;
+    private int headIndex = 0;
+    private int bodyIndex = 0;
+    private int legIndex = 0;
 
     // TODO (3) Create a variable to track whether to display a two-pane or single-pane UI
     // A single-pane display refers to phone screens, and two-pane to larger tablet screens
@@ -49,9 +50,14 @@ public class MainActivity extends AppCompatActivity implements MasterListFragmen
         // TODO (4) If you are making a two-pane display, add new BodyPartFragments to create an initial Android-Me image
         // Also, for the two-pane display, get rid of the "Next" button in the master list fragment
         if (findViewById(R.id.android_me_linear_layout) == null) {
+            Log.d(TAG, "onCreate: mTwoPane = false");
             mTwoPane = false;
         } else {
             mTwoPane = true;
+
+            findViewById(R.id.next_button).setVisibility(View.GONE);
+
+            Log.d(TAG, "onCreate: mTwoPane = true");
             //Create new body part fragments
 
             if (savedInstanceState == null) {
